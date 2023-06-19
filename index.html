@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script defer src="./scripts/borgar.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="foodstyles.css">
+    <title>Borgar</title>
+</head>
+<body>
+    <h1>Order a Pizza/Borgar</h1>
+<div id="select" style="display:block">
+    <form>
+        <label>What are you ordering today?</label><br>
+        <label>Pizza</label><input id="choosepizza" type="checkbox"><br>
+        <label>Borgar</label><input id="chooseborgar" type="checkbox"><br>
+    </form><br><br>
+</div>
+<div id="pizza" style="display:none">
+    <form>
+        <label>What pizza are you ordering today?</label><br><br>
+        <label>What toppings would you like? (Default is none)</label><br><input id="pizzatoppings" type="text"><br>
+        <label>What sauce would you like? (Default is tomato)</label><br><input id="pizzzasauce" type="text"><br>
+        <label>What dough would you like? (Default is standard)</label><br><input id="pizzadough" type="text"><br>
+        <input type="submit">
+    </form><br><br>
+</div>
+<div id="borgar" style="display:none">
+    <form>
+        <label>What borgar are you ordering today?</label><br><br>
+        <label>What borgar patty would you like? (Default is beef)</label><br><input id="borgarpatty" type="text"><br>
+        <label>What toppings would you like? (Default is none)</label><br><input id="borgartoppings" type="text"><br>
+        <label>Would you like to change the buns? (Default is sessame)</label><br>
+            <label>Yes</label><input id="yesbuns" name="wantbuns" type="radio"><br>
+            <label>No</label><input id="nobuns" name="wantbuns" type="radio"><br>
+        <div id="bunselection" style="display:none">
+        <label>How would you like your top bun?</label><br><input id="topbun" type="text"><br>
+        <label>How would you like your bottom bun?</label><br><input id="bottombun" type="text"><br>
+        </div>
+        <input type="submit">
+    </form>
+</div>
+</body>
+</html>
