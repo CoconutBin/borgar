@@ -28,6 +28,8 @@ class Pizza {
     }
 }
 
+const hellButton = document.getElementById('PizzaCSS')
+
 const choosePizza = document.getElementById('choosepizza');
 const chooseBorgar = document.getElementById('chooseborgar');
 const pizzaDiv = document.getElementById('pizza');
@@ -87,34 +89,43 @@ pizzaDiv.addEventListener('submit', function(event) {
   alert(`With ${pizzaOrder.dough} dough, and ${pizzaOrder.sauce} sauce.`)
   alert(`Your order will be delivered within 1 to lim_(x->0+) 1/x business days`)
   prompt(`Please write your credit card number here: (Phutopian Credit Cards are not accepted)`)
+  prompt(`Please also provide your mother's maiden name`)
   location.reload()
 })
 
-//To-do later
-/*
+
 borgarDiv.addEventListener('submit', function(event) {
     event.preventDefault()
 
 
-    let toppingsInput = (document.getElementById('pizzatoppings') as HTMLInputElement).value
-    let sauceInput = (document.getElementById('pizzzasauce') as HTMLInputElement).value
-    let doughInput = (document.getElementById('pizzadough') as HTMLInputElement).value
+    let pattyInput = (document.getElementById('borgarpatty') as HTMLInputElement).value
+    let toppingsInput = (document.getElementById('boargartoppings') as HTMLInputElement).value
+    let topBunInput = (document.getElementById('topbun') as HTMLInputElement).value
+    let bottomBunInput = (document.getElementById('bottombun') as HTMLInputElement).value
   
    
-    toppingsInput = toppingsInput == ''? null:toppingsInput
-    sauceInput = sauceInput == ''? null:sauceInput
-    doughInput = doughInput == ''? null:doughInput
+    toppingsInput = toppingsInput == ''? null:toppingsInput.trim()
+    pattyInput = pattyInput == ''? null:pattyInput.trim()
+    topBunInput = topBunInput == ''? null:topBunInput.trim()
+    bottomBunInput = bottomBunInput == ''? null:bottomBunInput.trim()
+
+    const burgerOrder = new Burger(topBunInput,toppingsInput.trim().split(','),pattyInput,bottomBunInput)
+ 
   
-    const pizzaOrder = new Pizza(toppingsInput.trim().split(','),sauceInput,doughInput)
-    pizzaOrder.bake()
-  
-    alert(`You've ordered a pizza that has ${pizzaOrder.toppings.length} topping(s). including:`)
-    pizzaOrder.toppings.forEach(topping => {
+    alert(`You've ordered a ${burgerOrder.burgerPatty} borgar that has ${burgerOrder.toppings.length} topping(s). including:`)
+    burgerOrder.toppings.forEach(topping => {
       alert(topping)
     })
-    alert(`With ${pizzaOrder.dough} dough, and ${pizzaOrder.sauce} sauce.`)
+      if ((yesBunsRadio as HTMLInputElement).checked) {
+        alert(`You've decided to customize your buns, you top bun will be ${burgerOrder.topBun} and your bottom bun will be ${burgerOrder.bottomBun}.`);
+      }
+      else if(burgerOrder.topBun != burgerOrder.bottomBun)
+      alert(`Your top bun will be ${burgerOrder.topBun} and your bottom bun will be ${burgerOrder.bottomBun}.`)
+      else
+      alert(`You've decided not to customize your buns, so it will be ${burgerOrder.topBun}`)
+
     alert(`Your order will be delivered within 1 to lim_(x->0+) 1/x business days`)
     prompt(`Please write your credit card number here: (Phutopian Credit Cards are not accepted)`)
+    prompt(`Please also provide your mother's maiden name`)
     location.reload()
   })
-*/

@@ -11,3 +11,10 @@ label{
 body {
     background-color: green;
   }
+
+.buttonlocation{
+    float: right;
+    position: absolute;
+    top: 0;
+    right: 0
+}
