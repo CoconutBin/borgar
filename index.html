@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script defer src="./scripts/borgar.js"></script>
+    <script defer src="./scripts/borgar.js" type="module"></script>
+    <script defer src="./scripts/themes.js"></script>
+    <script defer src="./scripts/food.js" type="module"></script>
     <!--script defer src="./ignore/sqrt.js"></script-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="foodstyles.css">
     <title>Borgar</title>
 </head>
-<body>
-    <h1>Order a Pizza/Borgar</h1>
-    <!--button id="PizzaCSS" class="buttonlocation">Change Themes</button-->
+<body id="body">
+    <h1 id="borgartext">Order a Pizza/Borgar</h1>
+    <button id="PizzaCSS" class="buttonlocation">Change Themes</button>
 <div id="select" style="display:block">
     <form>
         <label>What are you ordering today?</label><br>

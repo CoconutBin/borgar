@@ -1,34 +1,4 @@
-class Burger {
-    topBun: string
-    toppings: string[]
-    burgerPatty: string
-    bottomBun: string
-    constructor(patty?: string, toppings?: string[], topBun?: string, bottomBun?: string) {
-        this.topBun = topBun ?? "Sessame"
-        this.burgerPatty = patty ?? "Beef"
-        this.toppings = toppings ?? ["None"]
-        this.bottomBun = bottomBun ?? "Sessame"
-    }
-}
-
-class Pizza {
-    isBaked = false
-    dough: string
-    toppings: string[]
-    sauce: string
-    constructor(toppings?: string[], sauce?: string, dough?: string) {
-        this.dough = dough ?? 'Standard'
-        this.toppings = toppings ?? ['None']
-        this.sauce = sauce ?? "Tomato"
-    }
-
-    bake() {
-        this.isBaked = true
-        return
-    }
-}
-
-const hellButton = document.getElementById('PizzaCSS')
+import {Burger, Pizza} from './food.js'
 
 const choosePizza = document.getElementById('choosepizza');
 const chooseBorgar = document.getElementById('chooseborgar');

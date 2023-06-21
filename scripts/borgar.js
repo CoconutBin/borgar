@@ -1,31 +1,4 @@
-class Burger {
-    topBun;
-    toppings;
-    burgerPatty;
-    bottomBun;
-    constructor(patty, toppings, topBun, bottomBun) {
-        this.topBun = topBun ?? "Sessame";
-        this.burgerPatty = patty ?? "Beef";
-        this.toppings = toppings ?? ["None"];
-        this.bottomBun = bottomBun ?? "Sessame";
-    }
-}
-class Pizza {
-    isBaked = false;
-    dough;
-    toppings;
-    sauce;
-    constructor(toppings, sauce, dough) {
-        this.dough = dough ?? 'Standard';
-        this.toppings = toppings ?? ['None'];
-        this.sauce = sauce ?? "Tomato";
-    }
-    bake() {
-        this.isBaked = true;
-        return;
-    }
-}
-const hellButton = document.getElementById('PizzaCSS');
+import { Burger, Pizza } from './food.js';
 const choosePizza = document.getElementById('choosepizza');
 const chooseBorgar = document.getElementById('chooseborgar');
 const pizzaDiv = document.getElementById('pizza');
