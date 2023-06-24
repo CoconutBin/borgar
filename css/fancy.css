@@ -1,0 +1,26 @@
+h1{
+    font-size: 100px;
+    color: white;
+    font-family: Helvetica;
+}
+
+label{
+    font-size: 40px;
+    color: white;
+    font-family: Helvetica;
+}
+
+body {
+    background-color: #405063;
+}
+
+div{
+    background-color: rgba(140, 48, 201, 0.5);
+}
+
+.buttonlocation{
+    float: right;
+    position: absolute;
+    top: 0;
+    right: 0
+}

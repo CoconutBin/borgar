@@ -1,0 +1,29 @@
+h1{
+    font-size: 100px;
+    color: #05e4fb;
+    font-family: "Comic Sans MS", "Comic Sans";
+}
+
+label{
+    font-size: 40px;
+    color: whitesmoke;
+    font-family: "Comic Sans MS", "Comic Sans";
+}
+
+body {
+    background-color: black;
+    background-image: url(https://www.pockettactics.com/wp-content/sites/pockettactics/2022/05/sans-undertale.jpg);
+}
+
+div{
+   position: relative;
+   float: right;
+   background-color: rgba(0, 0, 0, 0.5);
+}
+
+.buttonlocation{
+    float: right;
+    position: absolute;
+    top: 0;
+    right: 0
+}

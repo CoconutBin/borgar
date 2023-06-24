@@ -69,7 +69,7 @@ borgarDiv.addEventListener('submit', function (event) {
     if (toppingsInput == null || toppingsInput == '-') {
         toppingsInput = "None";
     }
-    const burgerOrder = new Burger(topBunInput, toppingsInput.trim().split(','), pattyInput, bottomBunInput);
+    const burgerOrder = new Burger(pattyInput, toppingsInput.trim().split(','), topBunInput, bottomBunInput);
     console.log('new burger created');
     if (burgerOrder.toppings[0] == "None")
         alert(`You've ordered a ${burgerOrder.burgerPatty} borgar that has no toppings.`);

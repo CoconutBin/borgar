@@ -1,0 +1,20 @@
+h1{
+    font-size: 100px;
+    color: red;
+}
+
+label{
+    font-size: 40px;
+    color: red;
+}
+
+body {
+    background-color: lime;
+  }
+
+.buttonlocation{
+    float: right;
+    position: absolute;
+    top: 0;
+    right: 0
+}

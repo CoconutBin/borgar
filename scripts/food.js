@@ -4,10 +4,10 @@ export class Burger {
     burgerPatty;
     bottomBun;
     constructor(patty, toppings, topBun, bottomBun) {
-        this.topBun = topBun ?? "Sessame";
+        this.topBun = topBun ?? "Sesame";
         this.burgerPatty = patty ?? "Beef";
         this.toppings = toppings ?? ["None"];
-        this.bottomBun = bottomBun ?? "Sessame";
+        this.bottomBun = bottomBun ?? "Sesame";
     }
 }
 export class Pizza {
