@@ -1,8 +1,10 @@
-import { Burger, Pizza } from './food.js';
+import { Burger, Pizza, iceCream } from './food.js';
 const choosePizza = document.getElementById('choosepizza');
 const chooseBorgar = document.getElementById('chooseborgar');
+const chooseIceCream = document.getElementById('chooseicecream');
 const pizzaDiv = document.getElementById('pizza');
 const borgarDiv = document.getElementById('borgar');
+const icecreamDiv = document.getElementById('icecream');
 const yesBunsRadio = document.getElementById('yesbuns');
 const noBunsRadio = document.getElementById('nobuns');
 const bunSelectionDiv = document.getElementById('bunselection');
@@ -10,12 +12,23 @@ choosePizza.addEventListener('change', () => {
     if (choosePizza.checked) {
         pizzaDiv.style.display = 'block';
         borgarDiv.style.display = 'none';
+        icecreamDiv.style.display = 'none';
     }
 });
 chooseBorgar.addEventListener('change', () => {
     if (chooseBorgar.checked) {
         borgarDiv.style.display = 'block';
         pizzaDiv.style.display = 'none';
+        icecreamDiv.style.display = 'none';
+    }
+});
+let startTime;
+chooseIceCream.addEventListener('change', () => {
+    if (chooseIceCream.checked) {
+        icecreamDiv.style.display = 'block';
+        borgarDiv.style.display = 'none';
+        pizzaDiv.style.display = 'none';
+        startTime = new Date();
     }
 });
 yesBunsRadio.addEventListener('change', () => {
@@ -89,5 +102,59 @@ borgarDiv.addEventListener('submit', function (event) {
     alert(`Your order will be delivered within 1 to lim_(x->0+) 1/x business days`);
     prompt(`Please write your credit card number here: (Phutopian Credit Cards are not accepted)`);
     prompt(`Please also provide your mother's maiden name`);
+    location.reload();
+});
+icecreamDiv.addEventListener('submit', function (event) {
+    event.preventDefault();
+    let scoopCount = document.getElementById('scoopcount').value;
+    let toppingsInput = document.getElementById('icecreamtoppings').value;
+    let flavorsInput = document.getElementById('icecreamflavors').value;
+    toppingsInput = toppingsInput === '' ? null : toppingsInput.trim();
+    scoopCount =
+        scoopCount == '' ? '0' :
+            isNaN(parseInt(scoopCount)) ? '0' :
+                scoopCount.trim();
+    flavorsInput = flavorsInput === '' ? 'Vanilla' : flavorsInput.trim();
+    if (toppingsInput == null) {
+        toppingsInput = 'None';
+    }
+    const icecreamOrder = new iceCream(parseInt(scoopCount), flavorsInput.trim().split(','), toppingsInput.trim().split(','));
+    console.log('new ice cream created');
+    if (parseInt(scoopCount) < icecreamOrder.flavors.length && icecreamOrder.scoops != 0) {
+        alert('There must be more scoops than flavors!');
+        return;
+    }
+    if (icecreamOrder.scoops == 0) {
+        alert('You have ordered nothing.');
+        return;
+    }
+    else {
+        if (icecreamOrder.flavors.length == 1) {
+            alert(`You've ordered ${icecreamOrder.scoops} scoops of ${icecreamOrder.flavors} ice cream.`);
+        }
+        if (icecreamOrder.toppings[0] == 'None' && icecreamOrder.toppings.length == 1) {
+            alert("You've decided not to add toppings.");
+        }
+        else {
+            alert(`Your Ice Cream has ${icecreamOrder.toppings.length} topping(s), including:`);
+            icecreamOrder.toppings.forEach(topping => {
+                alert(topping);
+            });
+        }
+        const endTime = new Date();
+        const elapsedTime = endTime.getTime() - startTime.getTime();
+        if (elapsedTime > 10000)
+            icecreamOrder.melt();
+        console.log(`Elapsed time: ${elapsedTime} milliseconds`);
+        alert(`Your ice cream is ready!`);
+        prompt(`Please write your credit card number here: (Phutopian Credit Cards are not accepted)`);
+        prompt(`Please also provide your mother's maiden name`);
+        if (!icecreamOrder.isMelted)
+            alert("Here's your ice cream!");
+        else {
+            alert("Here's your ice cream!");
+            alert("Unfortunately, It's melted 😢");
+        }
+    }
     location.reload();
 });

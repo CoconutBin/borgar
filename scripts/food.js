@@ -25,6 +25,21 @@ export class Pizza {
         return;
     }
 }
+export class iceCream {
+    isMelted = false;
+    scoops;
+    flavors;
+    toppings;
+    constructor(scoops, flavors, toppings) {
+        this.scoops = scoops ?? 1;
+        this.toppings = toppings ?? ['None'];
+        this.flavors = flavors ?? ["Vanilla"];
+    }
+    melt() {
+        this.isMelted = true;
+        return;
+    }
+}
 export class bakedPizza extends Pizza {
     isBaked = true;
 }

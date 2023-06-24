@@ -11,7 +11,7 @@
     <title>Borgar</title>
 </head>
 <body id="body">
-    <h1 id="borgartext">Order a Pizza/Borgar</h1>
+    <h1 id="borgartext">Order Something</h1>
     <button id="PizzaCSS" class="buttonlocation">Change Themes</button>
 <div id="select" style="display:block">
     <form>
@@ -19,6 +19,7 @@
         <label>What are you ordering today?</label><br>
         <label>Pizza</label><input name='order' id="choosepizza" type="radio"><br>
         <label>Borgar</label><input name='order' id="chooseborgar" type="radio"><br>
+        <label>Ice Cream</label><input name='order' id="chooseicecream" type="radio"><br>
     </form><br><br>
 </div>
 <div id="pizza" style="display:none">
@@ -43,7 +44,17 @@
         <label>How would you like your bottom bun?</label><br><input id="bottombun" type="text"><br>
         </div>
         <input type="submit">
-    </form>
+    </form><br><br>
+</div>
+<div id="icecream" style="display:none">
+    <form>
+        <label>What ice cream are you ordering today?</label><br><br>
+        <label>How many scoops would you like? (Default is 1)</label><br><input id="scoopcount" type="text"><br>
+        <label>What flavors would you like? (Default is vanilla)</label><br><input id="icecreamflavors" type="text"><br>
+        <label>What toppings would you like? (Default is none)</label><br><input id="icecreamtoppings" type="text"><br>
+        <input type="submit" id="icecreamsubmit">
+    </form><br><br>
 </div>
 </body>
 </html>
+

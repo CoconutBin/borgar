@@ -28,6 +28,23 @@ export class Pizza {
     }
 }
 
+export class iceCream {
+    isMelted = false
+    scoops: number
+    flavors: string[]
+    toppings: string[]
+    constructor(scoops?: number, flavors?: string[], toppings?: string[]) {
+        this.scoops = scoops ?? 1
+        this.toppings = toppings ?? ['None']
+        this.flavors = flavors ?? ["Vanilla"]
+    }
+
+    melt() {
+        this.isMelted = true
+        return
+    }
+}
+
 export class bakedPizza extends Pizza{
     isBaked = true
 }
